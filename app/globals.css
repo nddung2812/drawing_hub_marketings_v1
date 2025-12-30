@@ -123,3 +123,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Feature Carousel Animation */
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
+.animate-carousel {
+  animation: carousel 30s linear infinite;
+}

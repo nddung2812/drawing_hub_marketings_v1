@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
@@ -17,7 +19,7 @@ const features = [
       </svg>
     ),
     title: "Bulk workflows",
-    description: "Bulk search, bulk extraction, “mark verified”, and save-to-db flows to standardize metadata across many drawings.",
+    description: "Bulk search, bulk extraction, mark verified, and save-to-db flows to standardize metadata across many drawings.",
   },
   {
     icon: (
@@ -27,7 +29,7 @@ const features = [
       </svg>
     ),
     title: "Human verification + auditability",
-    description: "Track verification status and audit history so you know what’s confirmed by humans vs AI and why it changed.",
+    description: "Track verification status and audit history so you know what's confirmed by humans vs AI and why it changed.",
   },
   {
     icon: (
@@ -62,34 +64,53 @@ const features = [
   },
 ];
 
+function FeatureCard({ feature }: { feature: typeof features[0] }) {
+  return (
+    <Card className="border-border hover:shadow-lg transition-shadow flex-shrink-0 w-[340px] sm:w-[380px]">
+      <CardHeader>
+        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+          {feature.icon}
+        </div>
+        <CardTitle>{feature.title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <CardDescription className="text-base">
+          {feature.description}
+        </CardDescription>
+      </CardContent>
+    </Card>
+  );
+}
+
 export function Features() {
   return (
-    <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="container mx-auto">
+    <section id="features" className="py-20 bg-muted/30 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Built for drawing operations at scale
           </h2>
           <p className="text-xl text-muted-foreground">
-            Convert “dark data” into trustworthy, searchable metadata—then standardize it with bulk workflows.
+            Convert "dark data" into trustworthy, searchable metadata—then standardize it with bulk workflows.
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Carousel Container */}
+      <div className="relative">
+        {/* Gradient overlays for fade effect */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none" />
+
+        {/* Scrolling track */}
+        <div className="flex gap-6 animate-carousel hover:[animation-play-state:paused]">
+          {/* First set of cards */}
           {features.map((feature, index) => (
-            <Card key={index} className="border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
-                  {feature.icon}
-                </div>
-                <CardTitle>{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  {feature.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <FeatureCard key={`first-${index}`} feature={feature} />
+          ))}
+          {/* Duplicate set for seamless loop */}
+          {features.map((feature, index) => (
+            <FeatureCard key={`second-${index}`} feature={feature} />
           ))}
         </div>
       </div>
