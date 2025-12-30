@@ -36,8 +36,8 @@ export default function RootLayout({
 (() => {
   try {
     const stored = localStorage.getItem("theme"); // "light" | "dark" | null
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const shouldUseDark = stored ? stored === "dark" : prefersDark;
+    // Default to dark theme if no preference is stored
+    const shouldUseDark = stored ? stored === "dark" : true;
     document.documentElement.classList.toggle("dark", shouldUseDark);
   } catch (_) {}
 })();
