@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState, useCallback, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
@@ -66,7 +67,7 @@ const features = [
 
 function FeatureCard({ feature }: { feature: typeof features[0] }) {
   return (
-    <Card className="border-border hover:shadow-lg transition-shadow flex-shrink-0 w-[340px] sm:w-[380px]">
+    <Card className="border-border hover:shadow-lg transition-shadow flex-shrink-0 w-[340px] sm:w-[380px] select-none">
       <CardHeader>
         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
           {feature.icon}
@@ -83,6 +84,97 @@ function FeatureCard({ feature }: { feature: typeof features[0] }) {
 }
 
 export function Features() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Clear timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (resumeTimeoutRef.current) {
+        clearTimeout(resumeTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleDragStart = useCallback((clientX: number) => {
+    if (!trackRef.current) return;
+
+    // Clear any pending resume timeout
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+      resumeTimeoutRef.current = null;
+    }
+
+    setIsDragging(true);
+    setIsPaused(true);
+    setStartX(clientX);
+
+    // Get current transform position
+    const transform = window.getComputedStyle(trackRef.current).transform;
+    const matrix = new DOMMatrix(transform);
+    setScrollLeft(matrix.m41);
+  }, []);
+
+  const handleDragMove = useCallback((clientX: number) => {
+    if (!isDragging || !trackRef.current) return;
+
+    const x = clientX;
+    const walk = x - startX;
+    trackRef.current.style.transform = `translateX(${scrollLeft + walk}px)`;
+  }, [isDragging, startX, scrollLeft]);
+
+  const handleDragEnd = useCallback(() => {
+    setIsDragging(false);
+
+    // Resume animation after 2 seconds of inactivity
+    resumeTimeoutRef.current = setTimeout(() => {
+      if (trackRef.current) {
+        // Reset transform to let CSS animation take over
+        trackRef.current.style.transform = '';
+      }
+      setIsPaused(false);
+    }, 2000);
+  }, []);
+
+  // Touch events
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    handleDragStart(e.touches[0].clientX);
+  }, [handleDragStart]);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    handleDragMove(e.touches[0].clientX);
+  }, [handleDragMove]);
+
+  const handleTouchEnd = useCallback(() => {
+    handleDragEnd();
+  }, [handleDragEnd]);
+
+  // Mouse events (for desktop drag support)
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    handleDragStart(e.clientX);
+  }, [handleDragStart]);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    handleDragMove(e.clientX);
+  }, [handleDragMove]);
+
+  const handleMouseUp = useCallback(() => {
+    if (isDragging) {
+      handleDragEnd();
+    }
+  }, [isDragging, handleDragEnd]);
+
+  const handleMouseLeave = useCallback(() => {
+    if (isDragging) {
+      handleDragEnd();
+    }
+  }, [isDragging, handleDragEnd]);
+
   return (
     <section id="features" className="py-20 bg-muted/30 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,19 +183,32 @@ export function Features() {
             Built for drawing operations at scale
           </h2>
           <p className="text-xl text-muted-foreground">
-            Convert "dark data" into trustworthy, searchable metadata—then standardize it with bulk workflows.
+            Convert &ldquo;dark data&rdquo; into trustworthy, searchable metadata—then standardize it with bulk workflows.
           </p>
         </div>
       </div>
 
       {/* Carousel Container */}
-      <div className="relative">
+      <div
+        className="relative cursor-grab active:cursor-grabbing"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         {/* Gradient overlays for fade effect */}
         <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none" />
 
         {/* Scrolling track */}
-        <div className="flex gap-6 animate-carousel hover:[animation-play-state:paused]">
+        <div
+          ref={trackRef}
+          className={`flex gap-6 ${isPaused ? '' : 'animate-carousel'}`}
+          style={{ touchAction: 'pan-y' }}
+        >
           {/* First set of cards */}
           {features.map((feature, index) => (
             <FeatureCard key={`first-${index}`} feature={feature} />
