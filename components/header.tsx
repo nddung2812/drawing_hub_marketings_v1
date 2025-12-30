@@ -44,7 +44,10 @@ export function Header() {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <Button asChild>
+            <Button
+              asChild
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-0 shadow-md hover:opacity-90"
+            >
               <a href="#how-it-works">Request Demo</a>
             </Button>
           </div>
@@ -108,7 +111,10 @@ export function Header() {
               Testimonials
             </a>
             <div className="flex flex-col space-y-2 pt-4">
-              <Button asChild className="w-full">
+              <Button
+                asChild
+                className="w-full bg-gradient-to-r from-primary via-purple-600 to-pink-600 text-white border-0 shadow-md hover:opacity-90"
+              >
                 <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>
                   Request Demo
                 </a>
