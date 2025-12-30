@@ -4,56 +4,61 @@ const features = [
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6M9 8h6m-8 13h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
       </svg>
     ),
-    title: "Lightning Fast",
-    description: "Blazing fast performance with real-time rendering and instant updates across all devices.",
+    title: "Title-block metadata extraction",
+    description: "Extract drawing number, title, revision, discipline/categories, and other key fields from PDFs and scans.",
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01" />
       </svg>
     ),
-    title: "Real-Time Collaboration",
-    description: "Work together seamlessly with your team in real-time, no matter where they are.",
+    title: "Bulk workflows",
+    description: "Bulk search, bulk extraction, “mark verified”, and save-to-db flows to standardize metadata across many drawings.",
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3l7 4v6c0 5-3 8-7 8s-7-3-7-8V7l7-4z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
       </svg>
     ),
-    title: "AI-Powered Tools",
-    description: "Leverage AI to enhance your creativity with smart suggestions and automated workflows.",
+    title: "Human verification + auditability",
+    description: "Track verification status and audit history so you know what’s confirmed by humans vs AI and why it changed.",
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7h18M6 7v10a4 4 0 004 4h4a4 4 0 004-4V7" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 11h8M8 15h6" />
       </svg>
     ),
-    title: "Enterprise Security",
-    description: "Bank-level encryption and security protocols to keep your data safe and private.",
+    title: "Scales across large drawing sets",
+    description: "Run batch pipelines (workers/queues) with retries and consistency instead of relying on manual effort.",
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 11a4 4 0 100-8 4 4 0 000 8z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 16h1" />
       </svg>
     ),
-    title: "Flexible Templates",
-    description: "Choose from hundreds of professionally designed templates or create your own.",
+    title: "Find related drawings fast",
+    description: "Group revisions, dedupe near-duplicates, and find related drawings with title-block similarity search.",
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
       </svg>
     ),
-    title: "Cloud Storage",
-    description: "Access your projects anywhere with unlimited cloud storage and automatic backups.",
+    title: "Downstream automation-ready",
+    description: "Once metadata is structured, power reports, dashboards, compliance checks, and completeness scoring.",
   },
 ];
 
@@ -63,10 +68,10 @@ export function Features() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Everything you need to create
+            Built for drawing operations at scale
           </h2>
           <p className="text-xl text-muted-foreground">
-            Powerful features designed to streamline your workflow and boost productivity
+            Convert “dark data” into trustworthy, searchable metadata—then standardize it with bulk workflows.
           </p>
         </div>
 

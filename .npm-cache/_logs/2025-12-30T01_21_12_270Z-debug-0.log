@@ -1,0 +1,46 @@
+0 verbose cli /Users/johnny/.nvm/versions/node/v24.7.0/bin/node /Users/johnny/.nvm/versions/node/v24.7.0/bin/npm
+1 info using npm@11.5.1
+2 info using node@v24.7.0
+3 silly config load:file:/Users/johnny/.nvm/versions/node/v24.7.0/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/johnny/Desktop/drawing_hub_marketings_v1/.npmrc
+5 silly config load:file:/Users/johnny/.npmrc
+6 silly config load:file:/Users/johnny/.nvm/versions/node/v24.7.0/etc/npmrc
+7 verbose title npm install jotai
+8 verbose argv "install" "jotai" "--no-audit" "--no-fund"
+9 verbose logfile logs-max:10 dir:/Users/johnny/Desktop/drawing_hub_marketings_v1/.npm-cache/_logs/2025-12-30T01_21_12_270Z-
+10 verbose logfile /Users/johnny/Desktop/drawing_hub_marketings_v1/.npm-cache/_logs/2025-12-30T01_21_12_270Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly fetch manifest jotai@*
+15 silly packumentCache full:https://registry.npmjs.org/jotai cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/jotai 632ms (cache miss)
+17 silly packumentCache full:https://registry.npmjs.org/jotai set size:undefined disposed:false
+18 silly fetch manifest @babel/core@>=7.0.0
+19 silly packumentCache full:https://registry.npmjs.org/@babel%2fcore cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/@babel%2fcore 286ms (cache miss)
+21 silly packumentCache full:https://registry.npmjs.org/@babel%2fcore set size:undefined disposed:false
+22 silly fetch manifest @babel/template@>=7.0.0
+23 silly packumentCache full:https://registry.npmjs.org/@babel%2ftemplate cache-miss
+24 http fetch GET 200 https://registry.npmjs.org/@babel%2ftemplate 522ms (cache miss)
+25 silly packumentCache full:https://registry.npmjs.org/@babel%2ftemplate set size:undefined disposed:false
+26 silly fetch manifest @types/react@^19
+27 silly packumentCache full:https://registry.npmjs.org/@types%2freact cache-miss
+28 http fetch GET 200 https://registry.npmjs.org/@types%2freact 62ms (cache miss)
+29 silly packumentCache full:https://registry.npmjs.org/@types%2freact set size:undefined disposed:false
+30 silly fetch manifest react@19.2.3
+31 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+32 http fetch GET 200 https://registry.npmjs.org/react 180ms (cache miss)
+33 silly packumentCache full:https://registry.npmjs.org/react set size:undefined disposed:false
+34 silly placeDep ROOT jotai@2.16.1 OK for: drawing_hub_marketings@0.1.0 want: *
+35 silly reify moves {}
+36 http cache jotai@https://registry.npmjs.org/jotai/-/jotai-2.16.1.tgz 0ms (cache hit)
+37 silly tarball no local data for jotai@https://registry.npmjs.org/jotai/-/jotai-2.16.1.tgz. Extracting by manifest.
+38 http fetch GET 200 https://registry.npmjs.org/jotai/-/jotai-2.16.1.tgz 80ms (cache miss)
+39 silly ADD node_modules/jotai
+40 verbose cwd /Users/johnny/Desktop/drawing_hub_marketings_v1
+41 verbose os Darwin 24.6.0
+42 verbose node v24.7.0
+43 verbose npm  v11.5.1
+44 verbose exit 0
+45 info ok

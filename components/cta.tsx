@@ -14,15 +14,15 @@ export function CTA() {
 
           <div className="relative z-10 max-w-3xl mx-auto text-center">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              Ready to transform your creative workflow?
+              Make drawings AI-ready—without losing trust
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Join 50,000+ creators who are already using DrawingHub to bring their ideas to life.
-              Start your free trial today—no credit card required.
+              Convert “dark data” into structured, searchable metadata—with human verification and audit trails
+              that teams can rely on for search, analytics, and automation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="text-lg px-8">
-                Start Free Trial
+                Request a Demo
                 <svg
                   className="ml-2 w-5 h-5"
                   fill="none"
@@ -42,11 +42,11 @@ export function CTA() {
                 variant="outline"
                 className="text-lg px-8 bg-white/10 border-white/30 text-white hover:bg-white/20"
               >
-                Schedule Demo
+                Talk to Sales
               </Button>
             </div>
             <p className="mt-6 text-sm text-white/80">
-              14-day free trial • No credit card required • Cancel anytime
+              Bulk processing • Human-verified fields • Transparent audit history
             </p>
           </div>
         </div>

@@ -24,7 +24,7 @@ export function Footer() {
               <span className="text-xl font-bold">DrawingHub</span>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
-              Professional drawing and design platform for creative teams.
+              Turn engineering drawings into searchable, trusted metadata—powered by AI and verified by humans.
             </p>
             {/* Social Links */}
             <div className="flex gap-4">
@@ -51,10 +51,10 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Product</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#features" className="hover:text-foreground transition-colors">Features</a></li>
-              <li><a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a></li>
+              <li><a href="#how-it-works" className="hover:text-foreground transition-colors">How it works</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Integrations</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Changelog</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Roadmap</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Security</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">API</a></li>
             </ul>
           </div>
 
@@ -62,7 +62,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#about" className="hover:text-foreground transition-colors">About</a></li>
+              <li><a href="#testimonials" className="hover:text-foreground transition-colors">Customers</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Blog</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Press</a></li>
@@ -77,8 +77,8 @@ export function Footer() {
               <li><a href="#" className="hover:text-foreground transition-colors">Documentation</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Help Center</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Community</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Templates</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">API</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Implementation Guide</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Status</a></li>
             </ul>
           </div>
         </div>

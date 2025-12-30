@@ -2,51 +2,57 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "Product Designer",
-    company: "TechCorp",
-    image: "SJ",
-    content: "DrawingHub has completely transformed our design workflow. The real-time collaboration features are game-changing!",
+    name: "Alyssa M.",
+    role: "Document Control Lead",
+    company: "EPC Contractor",
+    image: "AM",
+    content:
+      "We finally have consistent metadata across thousands of legacy drawings. Reviewers only touch the fields that need attention, and everything is auditable.",
     rating: 5,
   },
   {
-    name: "Michael Chen",
-    role: "Creative Director",
-    company: "DesignStudio",
+    name: "Michael C.",
+    role: "Engineering Manager",
+    company: "Manufacturing",
     image: "MC",
-    content: "The AI-powered tools save us hours every week. It's like having an extra team member who never sleeps.",
+    content:
+      "Finding the right drawing used to be painful. Now drawings are searchable by number, title, and revision—and related drawings are easy to group.",
     rating: 5,
   },
   {
-    name: "Emily Rodriguez",
-    role: "Freelance Illustrator",
-    company: "Independent",
+    name: "Emily R.",
+    role: "QA/QC Coordinator",
+    company: "Utilities",
     image: "ER",
-    content: "As a freelancer, DrawingHub gives me professional-grade tools without the enterprise price tag. Absolutely love it!",
+    content:
+      "The verified vs AI status makes it obvious what’s been checked. That trust layer is huge when you’re using the data for governance and reporting.",
     rating: 5,
   },
   {
-    name: "David Kim",
-    role: "UX Lead",
-    company: "StartupXYZ",
+    name: "David K.",
+    role: "Asset Information Manager",
+    company: "Energy",
     image: "DK",
-    content: "The template library is incredible. We can prototype ideas in minutes instead of hours. Highly recommend!",
+    content:
+      "Once metadata is structured, everything downstream gets easier—dashboards, completeness checks, deduping, and revision tracking all become possible.",
     rating: 5,
   },
   {
-    name: "Lisa Anderson",
-    role: "Art Director",
-    company: "Creative Agency",
+    name: "Lisa A.",
+    role: "Engineering Systems",
+    company: "Owner/Operator",
     image: "LA",
-    content: "Best design tool we've used. The interface is intuitive and the performance is outstanding even with complex projects.",
+    content:
+      "Batch processing with progress and retries lets us standardize how we ingest drawings. It’s not a one-off script—it's an operational workflow.",
     rating: 5,
   },
   {
-    name: "James Wilson",
-    role: "Graphic Designer",
-    company: "BrandCo",
+    name: "James W.",
+    role: "Project Controls",
+    company: "Infrastructure",
     image: "JW",
-    content: "DrawingHub's cloud storage and version control have saved our projects multiple times. It's a lifesaver!",
+    content:
+      "The ROI is straightforward: less manual admin, fewer mistakes, and much faster retrieval. We stopped re-keying title blocks into spreadsheets.",
     rating: 5,
   },
 ];
@@ -57,10 +63,10 @@ export function Testimonials() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Loved by creators worldwide
+            Built for engineering documentation teams
           </h2>
           <p className="text-xl text-muted-foreground">
-            See what our community has to say about DrawingHub
+            What teams say after turning drawings into searchable, trusted data
           </p>
         </div>
 

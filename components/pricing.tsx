@@ -4,49 +4,45 @@ import { Badge } from "@/components/ui/badge";
 
 const plans = [
   {
-    name: "Starter",
-    price: "$0",
-    description: "Perfect for individuals and hobbyists",
+    name: "Pilot",
+    price: "Custom",
+    description: "Validate extraction quality on your drawings",
     features: [
-      "5 projects",
-      "Basic drawing tools",
-      "1GB storage",
-      "Community support",
-      "Export to PNG/JPG",
+      "Batch upload + processing",
+      "Title-block metadata extraction",
+      "Reviewer queue for low-confidence fields",
+      "Export to CSV/JSON",
+      "Basic audit history",
     ],
-    cta: "Get Started",
+    cta: "Start a Pilot",
     popular: false,
   },
   {
-    name: "Pro",
-    price: "$29",
-    description: "For professionals and small teams",
+    name: "Team",
+    price: "Custom",
+    description: "Standardize metadata across projects",
     features: [
-      "Unlimited projects",
-      "Advanced drawing tools",
-      "100GB storage",
-      "Priority support",
-      "Export to all formats",
-      "Real-time collaboration",
-      "AI-powered features",
-      "Custom templates",
+      "Everything in Pilot",
+      "Bulk search + bulk actions",
+      "Verified vs AI status tracking",
+      "Revision grouping + dedupe helpers",
+      "Automated retries + progress visibility",
+      "Integrations (database / API)",
     ],
-    cta: "Start Free Trial",
+    cta: "Request a Demo",
     popular: true,
   },
   {
     name: "Enterprise",
     price: "Custom",
-    description: "For large teams and organizations",
+    description: "For regulated environments and large volumes",
     features: [
-      "Everything in Pro",
-      "Unlimited storage",
-      "Dedicated support",
-      "Custom integrations",
-      "Advanced security",
-      "SLA guarantee",
-      "Training & onboarding",
-      "Custom contracts",
+      "Everything in Team",
+      "SSO / SAML",
+      "Advanced audit + governance",
+      "VPC / private deployment options",
+      "SLA + dedicated support",
+      "Custom integrations + onboarding",
     ],
     cta: "Contact Sales",
     popular: false,
@@ -59,10 +55,10 @@ export function Pricing() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Simple, transparent pricing
+            Plans that scale with drawing volume
           </h2>
           <p className="text-xl text-muted-foreground">
-            Choose the perfect plan for your needs. Always flexible to grow with you.
+            Start with a pilot, then scale extraction + verification across projects and teams.
           </p>
         </div>
 
@@ -126,7 +122,7 @@ export function Pricing() {
         </div>
 
         <div className="mt-12 text-center text-sm text-muted-foreground">
-          <p>All plans include a 14-day free trial. No credit card required.</p>
+          <p>Not sure where to start? We’ll recommend a rollout based on your drawing volume and governance needs.</p>
         </div>
       </div>
     </section>
