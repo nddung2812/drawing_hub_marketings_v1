@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -89,25 +90,14 @@ export function Hero() {
           <div className="mt-16 relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-purple-500/20 to-pink-500/20 blur-3xl -z-10"></div>
             <div className="bg-card border border-border rounded-2xl shadow-2xl overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-muted via-background to-muted flex items-center justify-center">
-                <div className="text-center">
-                  <svg
-                    className="w-24 h-24 mx-auto text-muted-foreground/30"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <p className="mt-4 text-muted-foreground">
-                    Extraction quality, verification status, and audit history
-                  </p>
-                </div>
+              <div className="relative aspect-video">
+                <Image
+                  src="/feature1.png"
+                  alt="Feature preview of DrawingHub"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>
