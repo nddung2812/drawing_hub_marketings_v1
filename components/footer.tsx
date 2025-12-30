@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
@@ -5,22 +7,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 text-primary-foreground"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                  />
-                </svg>
-              </div>
+            <div className="flex items-center space-x-3 mb-4">
+              <Image
+                src="/DrawingHubLogo.svg"
+                alt="DrawingHub logo"
+                width={34}
+                height={34}
+                className="h-9 w-auto"
+              />
               <span className="text-xl font-bold">DrawingHub</span>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
