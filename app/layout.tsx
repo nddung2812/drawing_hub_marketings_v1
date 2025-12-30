@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "DrawingHub - Professional Drawing & Design Platform",
   description: "Transform your creative vision into reality with DrawingHub's powerful design tools and collaborative features.",
+  icons: {
+    icon: "/DrawingHubLogo.svg",
+  },
 };
 
 export default function RootLayout({
