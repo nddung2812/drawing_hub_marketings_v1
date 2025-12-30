@@ -49,9 +49,6 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button asChild variant="ghost">
-              <a href="#testimonials">Customers</a>
-            </Button>
             <ThemeToggle />
             <Button asChild>
               <a href="#how-it-works">Request Demo</a>
@@ -117,11 +114,6 @@ export function Header() {
               Testimonials
             </a>
             <div className="flex flex-col space-y-2 pt-4">
-              <Button asChild variant="ghost" className="w-full">
-                <a href="#testimonials" onClick={() => setMobileMenuOpen(false)}>
-                  Customers
-                </a>
-              </Button>
               <Button asChild className="w-full">
                 <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>
                   Request Demo

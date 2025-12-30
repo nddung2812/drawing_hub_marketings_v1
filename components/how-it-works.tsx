@@ -149,6 +149,7 @@ export function HowItWorks() {
                     "group",
                     "relative overflow-hidden",
                     "border-border",
+                    "h-full",
                     "transition-all duration-700 ease-out",
                     "hover:-translate-y-1 hover:shadow-xl",
                     active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
@@ -173,7 +174,7 @@ export function HowItWorks() {
                   />
 
                   {/* Content */}
-                  <div className="relative">
+                  <div className="relative flex flex-col h-full">
                     <CardHeader className="gap-3">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-lg bg-background/70 border border-border/60 backdrop-blur text-foreground flex items-center justify-center font-semibold">
@@ -182,7 +183,7 @@ export function HowItWorks() {
                         <CardTitle className="text-lg leading-tight">{step.title}</CardTitle>
                       </div>
                     </CardHeader>
-                    <CardContent className="pt-0">
+                    <CardContent className="pt-0 flex-1 flex items-start">
                       <p className="text-sm text-muted-foreground">{step.description}</p>
                     </CardContent>
                   </div>
